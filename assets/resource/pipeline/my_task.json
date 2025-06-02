@@ -1,5 +1,29 @@
 {
-    "MyTask1": {},
+    "点击应用": {
+        "recognition": "OCR",
+        "expected": "应用",
+        "action":"Click",
+        "next":[
+            "向下滑动"
+        ]
+    },
+    "向下滑动":{
+        "action":"Swipe",
+        "begin":[
+            500, 100, 10, 10
+        ],
+        "end":[
+            100, 100, 10, 10
+        ],
+        "next":[
+            "点击绘旅人"
+        ]
+    },
+    "点击绘旅人":{
+        "recognition": "TemplateMatch",
+        "template":"绘旅人图标.png",
+        "action":"Click"
+    },
     "MyTask2": {},
     "MyTask3": {},
     "MyTask4": {
