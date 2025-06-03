@@ -1,35 +1,134 @@
 {
-    "点击应用": {
+    "开始制香": {
         "recognition": "OCR",
-        "expected": "应用",
+        "expected": "开始制香",
         "action":"Click",
         "next":[
-            "向下滑动"
+            "点击艾草"
         ]
     },
-    "向下滑动":{
-        "action":"Swipe",
-        "begin":[
-            500, 100, 10, 10
-        ],
-        "end":[
-            100, 100, 10, 10
-        ],
-        "next":[
-            "点击绘旅人"
-        ]
-    },
-    "点击绘旅人":{
+    "点击艾草": {
         "recognition": "TemplateMatch",
-        "template":"绘旅人图标.png",
-        "action":"Click"
+        "template": "材料/艾草.png",
+        "action": "Click",
+        "timeout": 3000,
+        "next": [
+            "点击树脂"
+        ]
     },
-    "MyTask2": {},
-    "MyTask3": {},
-    "MyTask4": {
-        "recognition": "Custom",
-        "custom_recognition": "my_reco_222",
-        "action": "Custom",
-        "custom_action": "my_action_111"
+  
+    "点击树脂": {
+        "recognition": "TemplateMatch",
+        "template": "材料/树脂.png",
+        "action": "Click",
+        "timeout": 3000,
+        "next": [
+            "点击檀香碎片"
+        ]
+    },
+    "点击檀香碎片": {
+        "recognition": "TemplateMatch",
+        "template": "材料/檀香碎片.png",
+        "action": "Click",
+        "timeout": 3000,
+        "next": [
+            "点击迷迭香"
+        ]
+    },
+    "点击迷迭香": {
+        "recognition": "TemplateMatch",
+        "template": "材料/迷迭香.png",
+        "action": "Click",
+        "timeout": 3000,
+        "next": [
+            "点击零陵香"
+        ]
+    },
+    "点击零陵香": {
+        "recognition": "TemplateMatch",
+        "template": "材料/零陵香.png",
+        "action": "Click",
+        "timeout": 3000,
+        "next": [
+            "点击甘松香"
+        ]
+    },
+    "点击甘松香": {
+        "recognition": "TemplateMatch",
+        "template": "材料/甘松香.png",
+        "action": "Click",
+        "timeout": 3000,
+        "next": [
+            "点击雪松香粉"
+        ]
+    },
+    "点击雪松香粉": {
+        "recognition": "TemplateMatch",
+        "template": "材料/雪松香粉.png",
+        "action": "Click",
+        "timeout": 3000,
+        "next": [
+            "点击香茅"
+        ]
+    },
+    "点击香茅": {
+        "recognition": "TemplateMatch",
+        "template": "材料/香茅.png",
+        "action": "Click",
+        "timeout": 3000,
+        "next": [
+            "循环检测结束"
+        ]
+    },
+    "循环检测结束": {
+        "action": "DoNothing",
+        "next": [
+            "点击艾草", "研磨"
+        ],
+        "repeat": 5
+    },
+
+    "研磨":{
+        "recognition": "TemplateMatch",
+        "template":"转.png",
+        "action":"LongPress",
+        "duration": 1000,
+        "timeout": 3000,
+        "next": [
+            "浇水", "检测倒"
+        ]
+    },
+
+    "检测倒":{
+        "recognition": "TemplateMatch",
+        "template": "倒.png",
+        "action": "DoNothing",
+        "timeout": 2000,
+        "next": ["倒", "研磨"]
+    },
+    
+    "浇水":{
+        "recognition": "TemplateMatch",
+        "template": "浇水.png",
+        "action": "Click",
+        "timeout": 3000,
+        "next": ["研磨"]
+    },
+
+    "倒":{
+        "recognition": "TemplateMatch",
+        "template": "倒.png",
+        "action": "Swipe",
+        "begin": true,
+        "begin_offset": [0, 0, 0, 0],
+        "end": true,
+        "end_offset": [0, 300, 0, 0],
+        "duration": 300,
+        "timeout": 3000,
+        "next": ["任务结束"]
+    },
+
+    "任务结束": {
+        "action": "StopTask"
     }
 }
