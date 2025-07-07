@@ -2,14 +2,16 @@
     "开始制香": {
         "recognition": "OCR",
         "expected": "开始制香",
+        "roi": [1008, 553, 249, 73],
         "action":"Click",
         "next":[
             "点击艾草"
         ]
     },
     "点击艾草": {
-        "recognition": "TemplateMatch",
-        "template": "材料/艾草.png",
+        "recognition": "OCR",
+        "expected": "艾草",
+        "roi": [128, 546, 1072, 150],
         "action": "Click",
         "timeout": 3000,
         "next": [
@@ -18,8 +20,8 @@
     },
   
     "点击树脂": {
-        "recognition": "TemplateMatch",
-        "template": "材料/树脂.png",
+        "recognition": "OCR",
+        "expected": "树脂",
         "action": "Click",
         "timeout": 3000,
         "next": [
@@ -27,8 +29,8 @@
         ]
     },
     "点击檀香碎片": {
-        "recognition": "TemplateMatch",
-        "template": "材料/檀香碎片.png",
+        "recognition": "OCR",
+        "expected": "檀香碎片",
         "action": "Click",
         "timeout": 3000,
         "next": [
@@ -36,8 +38,8 @@
         ]
     },
     "点击迷迭香": {
-        "recognition": "TemplateMatch",
-        "template": "材料/迷迭香.png",
+        "recognition": "OCR",
+        "expected": "迷迭香",
         "action": "Click",
         "timeout": 3000,
         "next": [
@@ -45,8 +47,8 @@
         ]
     },
     "点击零陵香": {
-        "recognition": "TemplateMatch",
-        "template": "材料/零陵香.png",
+        "recognition": "OCR",
+        "expected": "零陵香",
         "action": "Click",
         "timeout": 3000,
         "next": [
@@ -54,8 +56,8 @@
         ]
     },
     "点击甘松香": {
-        "recognition": "TemplateMatch",
-        "template": "材料/甘松香.png",
+        "recognition": "OCR",
+        "expected": "甘松香",
         "action": "Click",
         "timeout": 3000,
         "next": [
@@ -63,8 +65,8 @@
         ]
     },
     "点击雪松香粉": {
-        "recognition": "TemplateMatch",
-        "template": "材料/雪松香粉.png",
+        "recognition": "OCR",
+        "expected": "雪松香粉",
         "action": "Click",
         "timeout": 3000,
         "next": [
@@ -72,8 +74,8 @@
         ]
     },
     "点击香茅": {
-        "recognition": "TemplateMatch",
-        "template": "材料/香茅.png",
+        "recognition": "OCR",
+        "expected": "香茅",
         "action": "Click",
         "timeout": 3000,
         "next": [
