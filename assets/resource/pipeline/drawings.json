@@ -1,0 +1,39 @@
+{
+    "开始升级绘卷": {
+        "precondition": {
+            "recognition": "TemplateMatch",
+            "template": "日常/笔记.png",
+            "pre_delay": 1000,
+            "pre_wait_freezes": 3000    
+        },
+        "next": [
+            "进入图鉴2"
+        ]
+    },
+    "进入图鉴2": {
+        "recognition": "OCR",
+        "expected": "图鉴",
+        "roi": [744, 590, 158, 130],
+        "action": "Click",
+        "next":[
+            "进入绘卷"   
+        ]
+    },
+    "进入绘卷": {
+        "recognition": "OCR",
+        "expected": "绘",
+        "roi": [0, 83, 182, 422],
+        "action": "Click",
+        "next":[
+            "选择绘卷"   
+        ]
+    },
+    "选择绘卷": {
+        "action": "Click",
+        "target": [369, 205, 37, 38],
+        "pre_wait_freezes": 300,
+        "next":[
+            "点击培养"
+        ]
+    }
+}
